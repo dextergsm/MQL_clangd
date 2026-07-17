@@ -28,6 +28,10 @@ if (!pat) {
 const cmd = `npx ${target === 'vsce' ? 'vsce' : 'ovsx'} publish${isPreRelease ? ' --pre-release' : ''}`;
 console.log(`Publishing to ${target.toUpperCase()}${isPreRelease ? ' (Pre-Release)' : ''}...`);
 
+// vsce/ovsx read package.json before running vscode:prepublish, so the
+// main-entry swap to ./dist must happen before they are invoked.
+execSync('node scripts/prepublish.js', { stdio: 'inherit' });
+
 const envWithPat = { ...process.env };
 if (target === 'vsce') {
     envWithPat.VSCE_PAT = pat;
