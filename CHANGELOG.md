@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.1.63
 
 ### Features
 
@@ -9,7 +9,7 @@
   Refinements:
   - **Inputs nested by `input group` sections**: When the source uses `input group "Name"` directives, inputs are nested under one sub-node per section — mirroring the section separators shown in the MT5 inputs/optimization dialog. Inputs declared before the first section sit directly under **Inputs**; the group total still counts every input. Files without section directives keep a flat input list.
   - **Function-like macros split out**: `#define` constants stay in **Macros**; function-like macros (`#define MAX(a,b) …`, where `(` immediately follows the name) move to a separate **Macro Functions** group and show their parameter list. An object-like macro with a parenthesised value (`#define X (1+2)`) is correctly left as a constant.
-  - **Alphabetical child sort (opt-in)**: New `mql_tools.Outline.SortGroupChildren` (default `false`) sorts each group's children by name — handy for long Includes/Inputs lists. Off keeps source order. Takes effect only under the Outline view's default *Sort By: Position* mode (VS Code's own *Sort By: Name/Type* overrides it).
+  - **Alphabetical child sort (opt-in)**: New `mql_tools.Outline.SortGroupChildren` (default `false`) sorts each group's children by name — handy for long Includes/Inputs lists. Off keeps source order. Takes effect only under the Outline view's default _Sort By: Position_ mode (VS Code's own _Sort By: Name/Type_ overrides it).
 
 ## 1.1.62
 
